@@ -10,6 +10,7 @@ import queue
 import tkinter as tk
 from datetime import datetime
 import webbrowser
+from urllib.parse import quote_plus
 
 
 # -------------------- VOICE ASSISTANT SETUP --------------------
@@ -73,11 +74,16 @@ def listen():
         return ""
 
 
+
 def process_command(command):
     if not command:
         return
 
-    if "hello" in command or "hi" in command:
+    if any(word in command.split() for word in ["bye", "exit", "quit"]):
+            speak("Goodbye! Have a nice day.")
+            messages.put(("close", ""))
+            return
+    if any(word in command.split() for word in ["hello", "hi", "hey"]):
         speak("Hello! How can I help you?")
 
     elif "time" in command:
@@ -98,16 +104,11 @@ def process_command(command):
         if search_query:
             speak(f"Searching for {search_query}")
             webbrowser.open(
-                "https://www.google.com/search?q="
-                + search_query.replace(" ", "+")
-            )
+            "https://www.google.com/search?q=" + quote_plus(search_query)
+)
+            
         else:
             speak("What would you like me to search for?")
-
-    elif any(word in command.split() for word in ["bye", "exit", "quit"]):
-        speak("Goodbye! Have a nice day.")
-        messages.put(("close", ""))
-        return
 
     else:
         speak("Sorry, I don't understand that command.")
