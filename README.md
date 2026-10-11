@@ -1,161 +1,176 @@
 # Oasis Infobyte Internship — Python Programming
 
-Welcome to my **Oasis Infobyte Python Programming Internship** repository! This repository showcases four Python projects developed as part of my internship. Each project focuses on practical programming concepts, problem-solving, user interaction, and application development.
+Welcome to my **Oasis Infobyte Python Programming Internship** repository! This repository showcases four Python projects developed as part of my internship. Each project demonstrates practical programming concepts, problem-solving, user interaction, and application development.
 
 ## Internship Details
 
 - **Organization:** Oasis Infobyte
 - **Internship Track:** Python Programming
 - **Programming Language:** Python
-- **Repository Name:** OIBSIP
-- **Projects Completed:** 4
+- **Repository:** OIBSIP
+- **Projects Documented:** 4
 
-## Projects Overview
+## Table of Contents
 
-1. Voice Assistant
+1. [Voice Assistant](#1-voice-assistant)
+2. [BMI Calculator](#2-bmi-calculator)
+3. [Random Password Generator](#3-random-password-generator)
+4. [Basic Weather App](#4-basic-weather-app)
+5. [Technologies Used](#technologies-used)
+6. [Acknowledgement](#acknowledgement)
 
-**Folder:** `Python-Task1-VoiceAssistant`
+---
+
+## 1. Voice Assistant
+
+**Project folder:** [`Python-Task1-VoiceAssistant`](Python-Task1-VoiceAssistant/)
 
 A Python-based voice assistant designed to respond to user commands and perform basic tasks.
 
-**Features**
+### Features
+
 - Greets the user.
 - Provides the current time and date.
 - Opens web searches for user-specified topics.
 - Handles unrecognized voice input and errors.
 - Provides spoken responses.
 
-Technologies: Python, speech recognition, date and time handling, web browser integration, and Windows text-to-speech.
+### Technologies
 
-2. BMI Calculator
+Python, speech recognition, date and time handling, web browser integration, and Windows text-to-speech.
 
-**Folder:** `Python-Task2-BMICalculator`
+### Screenshots
 
-A command-line application that calculates Body Mass Index (BMI) using the user's weight and height.
+![Voice Assistant Test 1](Python-Task1-VoiceAssistant/images/voice-assistant-test.png1.png)
 
-**Features**
-- Accepts weight in kilograms and height in metres.
+![Voice Assistant Test 2](Python-Task1-VoiceAssistant/images/voice-assistant-test.png2.png)
+
+[View Voice Assistant documentation](Python-Task1-VoiceAssistant/README.md)
+
+---
+
+## 2. BMI Calculator
+
+**Project folder:** [`Python-Task2-BMICalculator`](Python-Task2-BMICalculator/)
+
+A Python application that calculates Body Mass Index (BMI) using the user's weight and height.
+
+### Features
+
+- Accepts weight and height inputs.
 - Calculates BMI using the formula `BMI = weight / (height²)`.
-- Classifies BMI into Underweight, Normal, Overweight, and Obese categories.
-- Displays BMI rounded to two decimal places.
-- Validates numeric input and rejects invalid or non-positive values.
+- Displays the calculated BMI result.
+- Provides BMI classification according to the application's implementation.
 
-**Technologies:** Python, functions, arithmetic operations, conditional statements, and exception handling.
+### Technologies
 
- 3. Random Password Generator
+Python, arithmetic operations, conditional statements, functions, and input validation.
 
-**Folder:** `Python-Task3-PasswordGenerator`
+### Screenshots
 
-A Python application that generates passwords based on user-selected criteria.
+![BMI Calculator Test 1](Python-Task2-BMICalculator/images/bmi-calculator-test1.png)
 
-**Features**
-- Allows the user to specify password length.
-- Supports uppercase and lowercase letters, numbers, and symbols.
-- Validates password length and character-type selections.
-- Generates passwords according to the selected criteria.
-- Allows the user to generate additional passwords without restarting.
+![BMI Calculator Test 2](Python-Task2-BMICalculator/images/bmi-calculator-test2.png)
 
-**Technologies:** Python, `random`, and `string`.
+![BMI Calculator Test 3](Python-Task2-BMICalculator/images/bmi-calculator-test3.png)
 
-4. Basic Weather App
+![BMI Calculator Test 4](Python-Task2-BMICalculator/images/bmi-calculator-test4.png)
 
-**Folder:** `Python-Task4-WeatherApp`
+![BMI Calculator Test 5](Python-Task2-BMICalculator/images/bmi-calculator-test5.png)
 
-A command-line application that retrieves current weather information for a user-specified location using a weather API.
+![BMI Calculator Test 6](Python-Task2-BMICalculator/images/bmi-calculator-test6.png)
 
-**Features**
-- Accepts a city name or ZIP code.
-- Retrieves and processes weather data from an API.
-- Displays temperature in Celsius and Fahrenheit.
-- Shows humidity, weather conditions, and wind speed.
-- Handles invalid locations, network failures, and API errors.
+![BMI Calculator Test 7](Python-Task2-BMICalculator/images/bmi-calculator-test7.png)
 
-**Technologies:** Python, `requests`, JSON, and a weather API.
+[View BMI Calculator documentation](Python-Task2-BMICalculator/README.md)
 
-## 🗂️ Repository Structure
+---
 
-```text
-OIBSIP/
-│
-├── README.md
-│
-├── Python-Task1-VoiceAssistant/
-│   ├── assistant.py
-│   ├── requirements.txt
-│   └── ...
-│
-├── Python-Task2-BMICalculator/
-│   └── bmi_calculator.py
-│
-├── Python-Task3-PasswordGenerator/
-│   └── password_generator.py
-│
-└── Python-Task4-WeatherApp/
-    └── weather_app.py
-```
+## 3. Random Password Generator
 
-*Note: The filenames shown are examples of the expected project structure. Refer to each folder for its actual source files and dependencies.*
+**Project folder:** [`Python-Task3-PasswordGenerator`](Python-Task3-PasswordGenerator/)
 
- Requirements
+A Python application that generates random passwords according to the options supported by the program.
 
-- Python 3.x
-- Visual Studio Code or another Python-compatible editor
-- A terminal or command prompt
-- Internet access for weather API requests and online searches
-- Additional libraries required by individual projects
+### Features
 
-Install any required dependencies using the relevant project's dependency file, where provided.
+- Generates random passwords.
+- Supports password-generation options implemented in the application.
+- Provides an interactive command-line interface.
 
-## ▶️ How to Run
+### Technologies
 
-1. Clone or download this repository.
-2. Open the folder of the project you want to run.
-3. Open a terminal in that folder.
-4. Run the relevant Python script.
+Python and the libraries listed in the project's `requirements.txt`.
 
-For example, to run the Voice Assistant:
+### Screenshots
 
-```bash
-python assistant.py
-```
+![Password Generator Test 1](Python-Task3-PasswordGenerator/images/password-generator-test1.png)
 
-For the other projects, run their respective Python scripts:
+![Password Generator Test 2](Python-Task3-PasswordGenerator/images/password-generator-test2.png)
 
-```bash
-python bmi_calculator.py
-python password_generator.py
-python weather_app.py
-```
+![Password Generator Test 3](Python-Task3-PasswordGenerator/images/password-generator-test3.png)
 
-**Important:** Ensure that the required dependencies are installed and any API configuration needed by the Weather App is set up before running the relevant project.
+![Password Generator Test 4](Python-Task3-PasswordGenerator/images/password-generator-test4.png)
 
- Learning Outcomes
+![Password Generator Test 5](Python-Task3-PasswordGenerator/images/password-generator-test5.png)
 
-These projects provided practical experience with:
+![Password Generator Test 6](Python-Task3-PasswordGenerator/images/password-generator-test6.png)
 
-- Python programming fundamentals.
-- Functions, loops, and conditional statements.
-- User input and input validation.
-- Exception handling and debugging.
-- Working with Python libraries and external APIs.
-- Voice interaction and text-to-speech.
-- Random password generation.
-- Basic calculations and data classification.
-- Retrieving and processing weather data.
-- Organizing projects and maintaining code on GitHub.
+[View Password Generator documentation](Python-Task3-PasswordGenerator/README.md)
 
-Internship Project Status:
+---
 
-| No. | Project | Status |
-| 1 | Voice Assistant | Completed |
-| 2 | BMI Calculator | Completed |
-| 3 | Random Password Generator | Completed |
-| 4 | Basic Weather App | Completed |
+## 4. Basic Weather App
 
-Acknowledgement:
+**Project folder:** [`Python-Task4-WeatherApp`](Python-Task4-WeatherApp/)
 
-I sincerely thank **Oasis Infobyte** for providing the opportunity to develop practical programming skills and work on Python projects as part of its internship program.
+A Python application that retrieves weather information for a city using an external weather API.
 
-This repository represents my learning journey, project implementation, and hands-on experience with Python application development.
+### Features
 
-Developed as part of the Oasis Infobyte Python Programming Internship.
+- Accepts a city name from the user.
+- Retrieves weather information through an external API.
+- Uses environment variables for configuration.
+
+### Technologies
+
+Python, `requests`, `python-dotenv`, and an external weather API.
+
+### Screenshots
+
+![Weather App Test 1](Python-Task4-WeatherApp/images/weather-app-test1.png)
+
+![Weather App Test 2](Python-Task4-WeatherApp/images/weather-app-test2.png)
+
+![Weather App Test 3](Python-Task4-WeatherApp/images/weather-app-test3.png)
+
+![Weather App Test 4](Python-Task4-WeatherApp/images/weather-app-test4.png)
+
+![Weather App Test 5](Python-Task4-WeatherApp/images/weather-app-test5.png)
+
+![Weather App Test 6](Python-Task4-WeatherApp/images/weather-app-test6.png)
+
+![Weather App Test 7](Python-Task4-WeatherApp/images/weather-app-test7.png)
+
+![Weather App Test 8](Python-Task4-WeatherApp/images/weather-app-test8.png)
+
+[View Weather App documentation](Python-Task4-WeatherApp/README.md)
+
+---
+
+## Technologies Used
+
+- Python
+- Python standard library
+- External Python packages, where required
+- REST API integration for weather data
+- Git and GitHub
+- Markdown documentation
+
+## Acknowledgement
+
+I sincerely thank **Oasis Infobyte** for providing the opportunity to develop these projects as part of the Python Programming Internship. This experience helped me practice Python programming, application testing, project organization, and technical documentation.
+
+---
+
+*Developed as part of the Oasis Infobyte Python Programming Internship.*
