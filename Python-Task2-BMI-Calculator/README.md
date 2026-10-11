@@ -1,140 +1,102 @@
-# BMI Calculator — Advanced Level
-
-## Oasis Infobyte Python Programming Internship | Task 2
-
-**Project Level:** Advanced  
-**Project Type:** Desktop GUI Application
+# BMI Calculator — Python Internship Task 2
 
 ## Project Overview
 
-The BMI Calculator is a Python desktop application developed as part of Task 2 of the Oasis Infobyte Python Programming Internship.
+The BMI Calculator is a Python-based application developed as part of the Oasis Infobyte Python Programming Internship. It calculates a user's Body Mass Index (BMI) using their height and weight and displays the corresponding BMI result.
 
-The application calculates Body Mass Index (BMI) using a person's height and weight, displays the corresponding BMI category, stores calculation records in an SQLite database, and visualizes BMI history using a graph.
+The project demonstrates fundamental Python programming concepts and provides practical experience in developing, executing, and documenting a Python application.
+
+## Objectives
+
+- Develop a BMI Calculator using Python.
+- Calculate Body Mass Index from user-provided height and weight.
+- Display the calculated BMI result.
+- Practice Python programming and application testing.
 
 ## Features
 
-- Graphical user interface built with Tkinter
-- BMI calculation using height and weight
-- Classification into Underweight, Normal Weight, Overweight, and Obesity
-- Input validation for empty, non-numeric, zero, and negative values
-- Automatic storage of BMI records in an SQLite database
-- Persistent calculation history across application restarts
-- BMI history graph using Matplotlib
-- Reference lines for BMI values of 18.5, 25, and 30
-- Reset button to clear the current input fields
-- Error handling for invalid inputs and database failures
+- Accepts height and weight inputs.
+- Calculates Body Mass Index (BMI).
+- Displays the calculated BMI result.
+- Includes a collection of screenshots demonstrating program execution.
 
 ## Technologies Used
 
-- **Python 3** — application logic
-- **Tkinter** — graphical user interface
-- **SQLite** — database storage
-- **Matplotlib** — BMI history visualization
+- **Programming Language:** Python
+- **Database:** SQLite (as indicated by the project's `bmi_history.db` file)
+- **Additional Dependencies:** Refer to `requirements.txt`.
 
 ## Project Structure
 
 ```text
 Python-Task2-BMI-Calculator/
+├── images/
+│   ├── bmi-calculator-test1.png
+│   ├── bmi-calculator-test2.png
+│   ├── bmi-calculator-test3.png
+│   ├── bmi-calculator-test4.png
+│   ├── bmi-calculator-test5.png
+│   ├── bmi-calculator-test6.png
+│   └── bmi-calculator-test7.png
 ├── bmi_calculator.py
+├── bmi_history.db
 ├── requirements.txt
-├── README.md
-├── .gitignore
-└── screenshots/
-    └── bmi_calculator.png
+└── README.md
 ```
-
-**Note:** The `screenshots/` folder and screenshot will be added before final submission. The `bmi_history.db` database is generated automatically when the application runs and is excluded from Git using `.gitignore`.
 
 ## Installation and Execution
 
-### Prerequisites
-
-- Python 3 installed on your system
-- pip package manager
-
-### Installation
-
-1. Clone or download the repository.
-2. Open a terminal in the project directory.
-3. Install the required dependency:
+1. Install Python on your system if it is not already installed.
+2. Clone or download this repository.
+3. Open a terminal in the project directory.
+4. Install the required dependencies:
 
    ```bash
-   python -m pip install -r requirements.txt
+   pip install -r requirements.txt
    ```
 
-### Run the Application
+5. Run the application:
 
-Execute the following command:
+   ```bash
+   python bmi_calculator.py
+   ```
 
-```bash
-python bmi_calculator.py
-```
+6. Follow the program prompts and enter the required values.
 
-### How to Use
+## Screenshots
 
-1. Enter your height in meters.
-2. Enter your weight in kilograms.
-3. Click **Calculate BMI** to calculate and save your result.
-4. View the BMI value and corresponding category.
-5. Click **View BMI History Graph** to visualize saved BMI records.
-6. Click **Reset** to clear the current input fields.
+### Test 1
+![BMI Calculator Test 1](images/bmi-calculator-test1.png)
 
-## BMI Formula
+### Test 2
+![BMI Calculator Test 2](images/bmi-calculator-test2.png)
 
-BMI is calculated using the following formula:
+### Test 3
+![BMI Calculator Test 3](images/bmi-calculator-test3.png)
 
-**BMI = Weight (kg) / Height (m)²**
+### Test 4
+![BMI Calculator Test 4](images/bmi-calculator-test4.png)
 
-Example:
+### Test 5
+![BMI Calculator Test 5](images/bmi-calculator-test5.png)
 
-For a weight of 60 kg and a height of 1.65 m:
+### Test 6
+![BMI Calculator Test 6](images/bmi-calculator-test6.png)
 
-BMI = 60 / (1.65 × 1.65) = 22.04
+### Test 7
+![BMI Calculator Test 7](images/bmi-calculator-test7.png)
 
-## Adult BMI Categories
+## Learning Outcomes
 
-| BMI Range | Category |
-|---|---|
-| Below 18.5 | Underweight |
-| 18.5 to below 25 | Normal Weight |
-| 25 to below 30 | Overweight |
-| 30 and above | Obesity |
+- Practiced Python programming and user input handling.
+- Applied mathematical calculations in a practical application.
+- Gained experience testing a Python program.
+- Practiced project organization and technical documentation using Markdown.
 
-**Disclaimer:** BMI is a screening measure and is not a diagnosis of health.
+## Acknowledgement
 
-## Database
+This project was completed as part of the **Oasis Infobyte Python Programming Internship**.
 
-The application uses SQLite to store BMI calculation records, including:
+---
 
-- Date and time of calculation
-- Height
-- Weight
-- BMI value
-- BMI category
-
-The database is created automatically when the application starts. Saved records can be used to display BMI history across multiple sessions.
-
-## Testing
-
-The application should be tested for:
-
-- Valid height and weight values
-- Empty input fields
-- Non-numeric input
-- Zero and negative values
-- All four BMI categories
-- Multiple saved calculations
-- Database persistence after restarting the application
-- BMI history graph generation
-
-## Internship Task Details
-
-- **Organization:** Oasis Infobyte
-- **Internship:** Python Programming
-- **Task Number:** Task 2
-- **Task Name:** BMI Calculator
-- **Project Level:** Advanced
-
-## Author
-
-Developed as part of the Oasis Infobyte Python Programming Internship.
+*Developed for learning and practical application of Python programming concepts.*
