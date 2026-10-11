@@ -1,675 +1,153 @@
-# 🎙️ Python Voice Assistant
 
-### Oasis Infobyte Internship | Python Programming | Task 1
+# Python Voice Assistant
 
-A beginner-level **Python Voice Assistant** developed as part of the **Oasis Infobyte Python Programming Internship**.
+## Oasis Infobyte Internship – Python Task 1
 
-The project allows users to interact with a computer using spoken commands. It captures voice input through a microphone, converts speech into text, processes the command, performs the requested action, and provides a spoken response.
+**Level: Beginner**
 
----
+A Python-based voice assistant developed as part of the Oasis Infobyte Internship. This project combines speech recognition, voice responses, web search, and a graphical user interface (GUI).
 
-## 📌 Project Overview
+The application allows users to interact with the assistant through spoken commands using a desktop window.
 
-The Voice Assistant is a Python-based desktop assistant designed to demonstrate fundamental concepts of:
+## Features
 
-- Speech recognition
-- Voice-based interaction
-- Text-to-speech
-- Command processing
-- Date and time handling
-- Web browser automation
-- Exception handling
-- Python virtual environments
-- External package management
+- Voice input through the microphone
+- Responds to greetings such as "Hello" and "Hi"
+- Provides the current time and date
+- Performs Google searches using voice commands
+- Provides spoken responses
+- Displays user commands and assistant responses in the GUI
+- Shows listening and processing status
+- Uses background threading to keep the GUI responsive
+- Handles unrecognized speech and microphone errors
+- Supports exit commands such as "Bye", "Exit", and "Quit"
 
-The assistant continuously listens for commands until the user asks it to exit.
+## Technologies Used
 
----
+- Python
+- Tkinter for the graphical user interface
+- SpeechRecognition for speech-to-text
+- PyAudio for microphone input
+- Windows Speech Synthesizer for text-to-speech
+- Google Speech Recognition
+- datetime module
+- webbrowser module
+- threading and queue modules
 
-## ✨ Features
-
-### 🎤 1. Voice Input
-
-The assistant captures spoken commands using the system microphone.
-
-Speech is converted into text using the `SpeechRecognition` library and Google's speech recognition service.
-
----
-
-### 👋 2. Greeting Recognition
-
-The assistant recognizes common greetings such as:
-
-```text
-Hello
-Hi
-```
-
-Example:
-
-```text
-User: Hello
-
-Assistant: Hello! How can I help you?
-```
-
----
-
-### 🕐 3. Current Time
-
-The assistant can provide the current system time.
-
-Example:
-
-```text
-User: What is the time?
-
-Assistant: The current time is 10:30 PM
-```
-
-The time is obtained using Python's built-in `datetime` module.
-
----
-
-### 📅 4. Current Date
-
-The assistant can provide the current date.
-
-Example:
-
-```text
-User: What is today's date?
-
-Assistant: Today's date is 25 September 2026
-```
-
-The date is generated dynamically using Python's `datetime` module.
-
----
-
-### 🌐 5. Voice-Based Web Search
-
-The assistant can perform a Google search based on a spoken topic.
-
-Example:
-
-```text
-User: Search for Python tutorials
-```
-
-The assistant:
-
-1. Extracts the search topic.
-2. Announces that it is searching.
-3. Opens Google in the default web browser.
-4. Displays the search results.
-
----
-
-### 🔊 6. Text-to-Speech Feedback
-
-The assistant provides spoken responses instead of relying only on terminal output.
-
-The final implementation uses the **Windows Speech Synthesizer** through PowerShell.
-
-This approach was selected to provide stable voice feedback while maintaining reliable repeated microphone input on Windows.
-
----
-
-### 🛡️ 7. Error Handling
-
-The assistant handles common problems gracefully, including:
-
-- No speech detected
-- Speech that cannot be understood
-- Speech recognition service errors
-- Unexpected microphone errors
-
-The program does not terminate simply because one voice command fails.
-
----
-
-### 🚪 8. Exit Commands
-
-The assistant can be stopped using:
-
-```text
-Bye
-Exit
-Quit
-```
-
-Example:
-
-```text
-User: Exit
-
-Assistant: Goodbye! Have a nice day.
-```
-
----
-
-# 🧰 Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| Python | Core programming language |
-| SpeechRecognition | Converts spoken input into text |
-| PyAudio | Provides microphone/audio input |
-| Windows Speech Synthesizer | Converts responses into speech |
-| datetime | Provides current date and time |
-| webbrowser | Opens Google search results |
-| subprocess | Communicates with Windows PowerShell |
-| time | Controls timing between operations |
-
----
-
-# 🏗️ Project Architecture
-
-The application follows a simple voice-processing pipeline:
-
-```text
-                 ┌──────────────────┐
-                 │      User        │
-                 │  Speaks Command  │
-                 └────────┬─────────┘
-                          │
-                          ▼
-                 ┌──────────────────┐
-                 │    Microphone    │
-                 └────────┬─────────┘
-                          │
-                          ▼
-              ┌────────────────────────┐
-              │   SpeechRecognition    │
-              │     Speech → Text      │
-              └───────────┬────────────┘
-                          │
-                          ▼
-                ┌────────────────────┐
-                │ Command Processing │
-                └─────────┬──────────┘
-                          │
-          ┌───────────────┼────────────────┐
-          │               │                │
-          ▼               ▼                ▼
-      Time/Date       Web Search       Greeting
-          │               │                │
-          └───────────────┼────────────────┘
-                          │
-                          ▼
-                ┌────────────────────┐
-                │  Response Engine   │
-                └─────────┬──────────┘
-                          │
-                          ▼
-                ┌────────────────────┐
-                │ Windows Speech     │
-                │ Synthesizer (TTS)  │
-                └─────────┬──────────┘
-                          │
-                          ▼
-                    🔊 Voice Output
-```
-
----
-
-# 📁 Project Structure
+## Project Structure
 
 ```text
 Python-Task1-VoiceAssistant/
-│
 ├── assistant.py
-│       └── Main Voice Assistant application
-│
 ├── requirements.txt
-│       └── Python package dependencies
-│
 ├── README.md
-│       └── Project documentation
-│
-├── .gitignore
-│       └── Files and folders excluded from Git
-│
-└── venv/
-        └── Local Python virtual environment
+└── .gitignore
 ```
 
-> The `venv/` directory is used locally and is excluded from GitHub using `.gitignore`.
-
----
-
-# ⚙️ How the Application Works
-
-The application follows the following process:
-
-### Step 1: Microphone Calibration
-
-When the program starts, the microphone is calibrated to account for ambient background noise.
-
-```python
-recognizer.adjust_for_ambient_noise(source, duration=1)
-```
-
-This helps improve speech recognition in different environments.
-
----
-
-### Step 2: Capture Voice
-
-The assistant waits for the user to speak.
-
-```python
-audio = recognizer.listen(
-    source,
-    timeout=5,
-    phrase_time_limit=5
-)
-```
-
-The assistant waits for speech and limits the maximum duration of a command.
-
----
-
-### Step 3: Speech-to-Text
-
-The recorded audio is sent to the speech recognition service:
-
-```python
-text = recognizer.recognize_google(audio)
-```
-
-The spoken command is converted into text.
-
-For example:
-
-```text
-"What is the time?"
-```
-
-becomes:
-
-```text
-"what is the time"
-```
-
----
-
-### Step 4: Command Processing
-
-The recognized text is converted to lowercase and checked against predefined commands.
-
-For example:
-
-```python
-elif "time" in command:
-```
-
-If the command contains `"time"`, the assistant generates the current time.
-
----
-
-### Step 5: Perform the Requested Action
-
-Depending on the command, the assistant can:
-
-- Respond to greetings
-- Tell the time
-- Tell the date
-- Search Google
-- Exit the application
-
----
-
-### Step 6: Voice Response
-
-The generated response is passed to the Windows Speech Synthesizer.
-
-The user therefore receives an audible response rather than only terminal output.
-
----
-
-# 💻 Installation and Setup
-
-## Prerequisites
-
-Before running the project, make sure the system has:
+## Requirements
 
 - Windows operating system
-- Python 3.13 or compatible Python 3.x version
+- Python 3.13 recommended for this project
 - Working microphone
-- Internet connection
-- Git
-- VS Code or another Python IDE
+- Internet connection for speech recognition and Google searches
+- Required Python packages listed in `requirements.txt`
 
----
+## Installation and Setup
 
-## 1. Clone the Repository
-
-Clone the main OIBSIP repository:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/safura04/OIBSIP.git
 ```
 
----
-
-## 2. Open the Repository
-
-Move into the repository:
+### 2. Open the Project Folder
 
 ```bash
-cd OIBSIP
+cd OIBSIP/Python-Task1-VoiceAssistant
 ```
 
-Then open the Voice Assistant project:
-
-```bash
-cd Python-Task1-VoiceAssistant
-```
-
----
-
-## 3. Create a Virtual Environment
-
-Create a separate Python environment for this project:
+### 3. Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-A virtual environment keeps project dependencies isolated from other Python projects.
+### 4. Activate the Virtual Environment
 
----
-
-## 4. Activate the Virtual Environment
-
-### Windows Git Bash
+For Windows Git Bash:
 
 ```bash
 source venv/Scripts/activate
 ```
 
-### Windows Command Prompt
+For Windows Command Prompt:
 
 ```cmd
 venv\Scripts\activate
 ```
 
-After activation, the terminal should show:
-
-```text
-(venv)
-```
-
----
-
-## 5. Install Dependencies
-
-Install all required external packages:
+### 5. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-The dependencies are defined in:
-
-```text
-requirements.txt
-```
-
----
-
-## 6. Run the Application
-
-Start the assistant with:
+### 6. Run the Application
 
 ```bash
 python assistant.py
 ```
 
-The application will first calibrate the microphone and then begin listening for commands.
+## How to Use
 
-You should see:
+1. Launch the application.
+2. Click the **Speak to Assistant** button.
+3. Speak a supported command when the assistant is listening.
+4. View your command and the assistant's response in the conversation area.
+5. Click the microphone button again to give another command.
+6. Click **Exit** or say "Exit" to close the application.
 
-```text
-Calibrating microphone...
-Listening...
-```
+## Example Commands
 
----
+| Voice command | Expected action |
+|---|---|
+| Hello | Responds with a greeting |
+| What is the time? | Announces the current time |
+| What is today's date? | Announces the current date |
+| Search for Python tutorials | Opens a Google search |
+| Exit | Says goodbye and closes the application |
 
-# 🎮 Usage
+## How It Works
 
-Once the program displays:
+1. The user clicks the microphone button.
+2. The microphone captures the spoken command.
+3. SpeechRecognition converts the speech into text.
+4. The program identifies the command and performs the corresponding action.
+5. The assistant displays its response and speaks it using the Windows Speech Synthesizer.
+6. Background threading helps keep the graphical interface responsive during listening.
 
-```text
-Listening...
-```
+## Error Handling
 
-speak a supported command.
+The application handles situations such as:
 
-### Greeting
+- No speech detected
+- Unrecognized speech
+- Speech recognition service errors
+- Microphone errors
 
-```text
-Hello
-```
+## Privacy
 
-### Time
+The application uses Google Speech Recognition to process voice input, which requires sending audio to an online service. Avoid speaking passwords, financial information, or other sensitive information while using the application.
 
-```text
-What is the time?
-```
+## Internship Details
 
-### Date
+- **Organization:** Oasis Infobyte
+- **Track:** Python Programming
+- **Task:** Task 1 – Voice Assistant
+- **Level:** Beginner
 
-```text
-What is today's date?
-```
-
-### Google Search
-
-```text
-Search for Python tutorials
-```
-
-or:
-
-```text
-Search for artificial intelligence
-```
-
-### Exit
-
-```text
-Exit
-```
-
-You can also use:
-
-```text
-Bye
-```
-
-or:
-
-```text
-Quit
-```
-
----
-
-# 🧪 Example Interaction
-
-```text
-Calibrating microphone...
-
-Listening...
-You said: hello
-
-Assistant:
-Hello! How can I help you?
-
-Listening...
-You said: what is the time
-
-Assistant:
-The current time is 10:30 PM
-
-Listening...
-You said: what is today's date
-
-Assistant:
-Today's date is 25 September 2026
-
-Listening...
-You said: search for Python tutorials
-
-Assistant:
-Searching for Python tutorials
-
-[Google search opens in the default browser]
-
-Listening...
-You said: exit
-
-Assistant:
-Goodbye! Have a nice day.
-```
-
----
-
-# 🛡️ Error Handling
-
-The application includes exception handling for several possible situations.
-
-### No Speech Detected
-
-If the user does not speak within the listening period, the application continues running instead of crashing.
-
----
-
-### Unrecognized Speech
-
-If speech is detected but cannot be understood, the assistant responds:
-
-```text
-Sorry, I couldn't understand that. Please try again.
-```
-
----
-
-### Speech Recognition Service Error
-
-If the speech recognition service cannot be reached, the application handles the error instead of terminating unexpectedly.
-
----
-
-### Microphone Errors
-
-Unexpected microphone-related errors are caught using exception handling.
-
----
-
-# 🔐 Privacy Considerations
-
-The application uses the microphone to capture spoken commands.
-
-Speech recognition is performed using Google's speech recognition service through the `SpeechRecognition` library.
-
-The application does not intentionally store voice recordings, user commands, passwords, or personal information.
-
-Web searches are opened in the user's default browser when a search command is given.
-
-Users should understand that spoken audio processed through an external speech recognition service may be subject to that service's own policies.
-
----
-
-# 📦 Dependencies
-
-The project uses the following external Python packages:
-
-```text
-SpeechRecognition==3.17.0
-PyAudio==0.2.14
-```
-
-Python standard-library modules used by the project include:
-
-```text
-datetime
-webbrowser
-subprocess
-time
-```
-
-These standard-library modules do not require separate installation.
-
----
-
-# 🧹 Git and Project Hygiene
-
-The project contains a `.gitignore` file to prevent unnecessary local files from being uploaded to GitHub.
-
-The following types of files are excluded:
-
-```text
-venv/
-__pycache__/
-*.pyc
-*.pyo
-.vscode/
-.env
-```
-
-The local virtual environment is therefore not included in the public repository.
-
----
-
-# 🚀 Future Improvements
-
-The current implementation focuses on the **Beginner Level requirements** of the Oasis Infobyte task.
-
-Possible future enhancements include:
-
-- Natural language intent recognition
-- Weather API integration
-- Email sending through voice commands
-- Voice-controlled reminders
-- General knowledge question answering
-- Custom user commands
-- More advanced conversational interaction
-- Support for additional languages
-- GUI-based interface
-- Smart-home integrations
-
-These features are outside the scope of the current Beginner Level implementation.
-
----
-
-# 🎓 Internship Information
-
-**Organization:** Oasis Infobyte
-
-**Internship Track:** Python Programming
-
-**Task:** Task 1 – Voice Assistant
-
-**Level:** Beginner
-
-**Project Type:** Python Voice Assistant
-
----
-
-# 👨‍💻 Author
+## Author
 
 **Safura Mulla**
 
-Python Programming Intern  
-Oasis Infobyte Internship
-
----
-
-# 📜 License
-
-This project was developed as part of an internship assignment for educational and demonstration purposes.
+Oasis Infobyte Internship – Python Programming
