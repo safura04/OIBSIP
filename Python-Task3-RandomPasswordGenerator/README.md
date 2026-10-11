@@ -1,68 +1,71 @@
 # Random Password Generator
 
-## Oasis Infobyte Internship – Python Task 3
+**Oasis Infobyte Internship — Python Programming**  
+**Task 3: Random Password Generator | Advanced Level**
 
-A secure Random Password Generator developed using Python as part of the Oasis Infobyte Internship. This application provides a graphical user interface (GUI) that allows users to generate strong random passwords based on their preferred length and character types.
+## Project Overview
+
+The Random Password Generator is a Python-based GUI application that generates secure, customizable passwords. Users can choose password length and character types, check password strength, and copy passwords to the clipboard.
 
 ## Features
 
-- Generate secure random passwords.
+- Generate secure random passwords using Python's `secrets` module.
 - Customize password length from 8 to 64 characters.
-- Choose uppercase letters, lowercase letters, numbers, and symbols.
+- Select uppercase letters, lowercase letters, numbers, and symbols.
 - Exclude ambiguous characters such as `0`, `O`, `1`, `l`, and `I`.
 - Display password strength as Weak, Medium, or Strong.
-- Copy generated passwords to the clipboard.
-- View the five most recently generated passwords during the session.
-- Keep password history temporary without saving it to a file.
+- Automatically copy generated passwords to the clipboard.
+- Copy passwords manually using the Copy to Clipboard button.
+- Display the five most recently generated passwords during the current session.
+- Keep password history in memory without saving it to a file.
+- Provide a graphical interface using Tkinter.
 
 ## Technologies Used
 
 - Python 3.13
-- Tkinter – Graphical User Interface
-- Secrets – Secure random password generation
-- String – Character sets
-- Pyperclip – Clipboard functionality
+- Tkinter
+- Secrets
+- String
+- Pyperclip
 
 ## Installation
 
-1. Install Python 3.13 or a compatible Python 3 version.
+1. Install Python 3.
 2. Install the required dependency:
 
    ```bash
-   pip install pyperclip
+   python -m pip install pyperclip
    ```
-
-3. Download or clone the repository.
-4. Open the project folder in VS Code.
 
 ## How to Run
 
-Execute the following command in the terminal:
+Open the terminal in the project folder and execute:
 
 ```bash
 python password_generator.py
 ```
 
-The Password Generator window will open. Select your desired password length and character types, then click **Generate Password**.
+The application window will open. Choose your desired password length and character types, then click **Generate Password**.
 
 ## Project Structure
 
 ```text
 Python-Task3-RandomPasswordGenerator/
-│
 ├── password_generator.py
-└── README.md
+├── README.md
+└── screenshots/
 ```
+
+The `screenshots` folder is optional; add it when you have captured screenshots of the application.
 
 ## Learning Outcomes
 
-- Understanding secure random number generation using Python's `secrets` module.
-- Building graphical interfaces using Tkinter.
-- Working with strings and character sets.
-- Implementing clipboard functionality.
-- Applying input validation and basic password strength evaluation.
+- Secure random password generation.
+- GUI development using Tkinter.
+- Character-set manipulation.
+- Clipboard integration.
+- Input validation and basic password strength evaluation.
 
 ## Acknowledgement
 
-This project was developed as part of the Python Programming Internship at Oasis Infobyte.
-
+This project was developed as part of the Oasis Infobyte Python Programming Internship.
