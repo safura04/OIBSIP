@@ -1,9 +1,9 @@
-
 import tkinter as tk
 from tkinter import ttk, messagebox
 import secrets
 import string
 import pyperclip
+
 
 # Character sets for password generation
 CHARACTERS = {
@@ -274,7 +274,11 @@ class PasswordGenerator:
         try:
             pyperclip.copy(password)
         except pyperclip.PyperclipException:
-            pass
+            messagebox.showwarning(
+                "Clipboard Warning",
+                "Password generated, but automatic copying failed. "
+                "Use the Copy to Clipboard button or copy it manually."
+            )
 
         # Keep only the five most recent passwords in memory
         self.history.insert(0, password)
