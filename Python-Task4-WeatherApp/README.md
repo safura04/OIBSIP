@@ -1,141 +1,107 @@
-# WeatherNow — Advanced Weather Application
-
-## Oasis Infobyte Python Programming Internship | Task 4
-
-**Project Level:** Advanced  
-**Project Type:** Desktop GUI Application  
-**Technology:** Python, Tkinter, OpenWeatherMap API
+# Basic Weather App — Python Internship Task 4
 
 ## Project Overview
 
-WeatherNow is an advanced-level desktop weather application developed using Python as part of Task 4 of the Oasis Infobyte Python Programming Internship.
+The Basic Weather App is a Python application developed as part of the Oasis Infobyte Python Programming Internship. It uses weather data from an external service to provide weather information for a city entered by the user.
 
-The application retrieves real-time weather information and forecast data for a user-selected city using the OpenWeatherMap API. It features a graphical user interface built with Tkinter, making weather information easy to access and understand.
+## Objectives
+
+- Develop a weather application using Python.
+- Retrieve weather information using an external API.
+- Practice working with Python libraries and environment variables.
+- Test the application using different city inputs.
 
 ## Features
 
-- **Real-Time Weather:** Displays current weather conditions for a searched city.
-- **Weather Details:** Shows temperature, feels-like temperature, humidity, wind speed, and other available weather information.
-- **Weather Icons:** Displays visual indicators corresponding to weather conditions.
-- **Weather Forecast:** Provides upcoming forecast information.
-- **Temperature Unit Conversion:** Allows users to switch between Celsius and Fahrenheit.
-- **City Search:** Fetches weather information for different cities.
-- **Refresh Option:** Allows users to refresh the weather data.
-- **Demo Mode:** Supports demonstration without relying on a successful live API response.
-- **Scrollable Interface:** Supports scrolling through the application's content.
-- **Error Handling:** Handles API errors and unsuccessful city searches.
-- **Environment Variables:** Keeps the API key in a local `.env` file rather than hardcoding it into the source code.
+- Accepts a city name from the user.
+- Retrieves weather information through a weather API.
+- Uses environment variables to manage configuration.
+- Provides a command-line interface for interaction.
 
 ## Technologies Used
 
-- Python 3
-- Tkinter — graphical user interface
-- Requests — HTTP requests to the weather API
-- Python-dotenv — loading environment variables
-- OpenWeatherMap API — current weather and forecast data
+- **Programming Language:** Python
+- **HTTP Requests:** `requests`
+- **Environment Configuration:** `python-dotenv`
+- **Weather Data:** External weather API
 
 ## Project Structure
 
 ```text
 Python-Task4-WeatherApp/
-│
-├── weather_app.py
-├── requirements.txt
-├── README.md
-├── .gitignore
+├── images/
+│   ├── weather-app-test1.png
+│   ├── weather-app-test2.png
+│   ├── weather-app-test3.png
+│   ├── weather-app-test4.png
+│   ├── weather-app-test5.png
+│   ├── weather-app-test6.png
+│   ├── weather-app-test7.png
+│   └── weather-app-test8.png
 ├── .env
-└── venv/
+├── .gitignore
+├── requirements.txt
+├── weather_app.py
+└── README.md
 ```
 
-**Note:** `.env` and `venv/` are local files/folders and should not be uploaded to GitHub.
+## Installation and Execution
 
-## Installation and Setup
+1. Install Python on your system.
+2. Clone or download the repository.
+3. Open a terminal in the project directory.
+4. Install the required dependencies:
 
-### 1. Clone the repository
+   ```bash
+   python -m pip install -r requirements.txt
+   ```
 
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-```
+5. Configure the required weather API key in the `.env` file according to the application's configuration.
+6. Run the application:
 
-Navigate to the project directory:
+   ```bash
+   python weather_app.py
+   ```
 
-```bash
-cd OIBSIP/Python-Task4-WeatherApp
-```
+7. Enter a city name and review the weather information returned by the application.
 
-### 2. Create and activate a virtual environment
+## Screenshots
 
-```bash
-python -m venv venv
-```
+### Test 1
+![Weather App Test 1](images/weather-app-test1.png)
 
-On Windows Git Bash:
+### Test 2
+![Weather App Test 2](images/weather-app-test2.png)
 
-```bash
-source venv/Scripts/activate
-```
+### Test 3
+![Weather App Test 3](images/weather-app-test3.png)
 
-### 3. Install dependencies
+### Test 4
+![Weather App Test 4](images/weather-app-test4.png)
 
-```bash
-python -m pip install -r requirements.txt
-```
+### Test 5
+![Weather App Test 5](images/weather-app-test5.png)
 
-### 4. Configure the API key
+### Test 6
+![Weather App Test 6](images/weather-app-test6.png)
 
-Create a `.env` file in the project directory and add your OpenWeatherMap API key:
+### Test 7
+![Weather App Test 7](images/weather-app-test7.png)
 
-```text
-OPENWEATHER_API_KEY=your_api_key_here
-```
-
-Replace `your_api_key_here` with your own API key. Do not share or commit this file.
-
-### 5. Run the application
-
-```bash
-python weather_app.py
-```
-
-## How to Use
-
-1. Launch the application.
-2. Enter the name of a city.
-3. Search for the city to retrieve its weather information.
-4. View the current weather details and forecast.
-5. Switch temperature units when required.
-6. Use the refresh option to update the information.
-
-## API
-
-This application uses the OpenWeatherMap API to retrieve current weather conditions and forecast data.
-
-Website: https://openweathermap.org/api
-
-An API key is required for live weather data. API access and forecast availability depend on the selected API endpoints and account access.
-
-## Security
-
-- API credentials are stored in `.env`.
-- `.env` and `venv/` are excluded through `.gitignore`.
-- Never publish your API key in source code, screenshots, or public repositories.
+### Test 8
+![Weather App Test 8](images/weather-app-test8.png)
 
 ## Learning Outcomes
 
-- Building desktop GUI applications using Tkinter.
-- Integrating external APIs with Python.
-- Handling HTTP requests and API responses.
-- Managing environment variables securely.
-- Implementing error handling and threaded network requests.
-- Designing a user-friendly and scrollable interface.
+- Practiced making HTTP requests in Python.
+- Learned to manage configuration using environment variables.
+- Gained experience integrating an external API.
+- Practiced testing and documenting a Python application.
 
-## Internship Information
+## Acknowledgement
 
-**Organization:** Oasis Infobyte  
-**Internship:** Python Programming Internship  
-**Task:** Task 4 — Weather Application  
-**Project Level:** Advanced
+This project was completed as part of the **Oasis Infobyte Python Programming Internship**.
 
-## Author
+---
 
-Developed as part of the Oasis Infobyte Python Programming Internship.
+*Developed for learning and practical application of Python programming concepts.*
