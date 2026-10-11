@@ -1,38 +1,32 @@
+# Voice Assistant — Python Internship Task 1
 
-# Python Voice Assistant
+## Project Overview
 
-## Oasis Infobyte Internship – Python Task 1
+The Voice Assistant is a Python-based application developed as part of the Oasis Infobyte Python Programming Internship. It responds to user commands and performs basic tasks such as greeting the user, providing the current date and time, and opening web searches.
 
-**Level: Beginner**
+## Objectives
 
-A Python-based voice assistant developed as part of the Oasis Infobyte Internship. This project combines speech recognition, voice responses, web search, and a graphical user interface (GUI).
-
-The application allows users to interact with the assistant through spoken commands using a desktop window.
+- Build a basic voice assistant using Python.
+- Process user commands and respond appropriately.
+- Provide date and time information.
+- Open web searches based on user requests.
+- Handle errors and unrecognized input gracefully.
 
 ## Features
 
-- Voice input through the microphone
-- Responds to greetings such as "Hello" and "Hi"
-- Provides the current time and date
-- Performs Google searches using voice commands
-- Provides spoken responses
-- Displays user commands and assistant responses in the GUI
-- Shows listening and processing status
-- Uses background threading to keep the GUI responsive
-- Handles unrecognized speech and microphone errors
-- Supports exit commands such as "Bye", "Exit", and "Quit"
+- **Greeting:** Responds to a greeting from the user.
+- **Date and Time:** Provides the current date and time.
+- **Web Search:** Opens a browser search for a requested topic.
+- **Error Handling:** Handles unrecognized input and unsuccessful interactions.
+- **Speech Output:** Provides spoken responses using Windows text-to-speech.
 
 ## Technologies Used
 
-- Python
-- Tkinter for the graphical user interface
-- SpeechRecognition for speech-to-text
-- PyAudio for microphone input
-- Windows Speech Synthesizer for text-to-speech
-- Google Speech Recognition
-- datetime module
-- webbrowser module
-- threading and queue modules
+- Python 3
+- Speech recognition
+- Date and time handling
+- Web browser integration
+- Windows PowerShell text-to-speech
 
 ## Project Structure
 
@@ -40,114 +34,44 @@ The application allows users to interact with the assistant through spoken comma
 Python-Task1-VoiceAssistant/
 ├── assistant.py
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
-## Requirements
+## How to Run
 
-- Windows operating system
-- Python 3.13 recommended for this project
-- Working microphone
-- Internet connection for speech recognition and Google searches
-- Required Python packages listed in `requirements.txt`
-
-## Installation and Setup
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/safura04/OIBSIP.git
-```
-
-### 2. Open the Project Folder
-
-```bash
-cd OIBSIP/Python-Task1-VoiceAssistant
-```
-
-### 3. Create a Virtual Environment
-
-```bash
-python -m venv venv
-```
-
-### 4. Activate the Virtual Environment
-
-For Windows Git Bash:
-
-```bash
-source venv/Scripts/activate
-```
-
-For Windows Command Prompt:
-
-```cmd
-venv\Scripts\activate
-```
-
-### 5. Install Dependencies
-
-```bash
-python -m pip install -r requirements.txt
-```
-
-### 6. Run the Application
+1. Install Python 3 on your system.
+2. Open the project folder in VS Code.
+3. Install the dependencies listed in `requirements.txt`, if required.
+4. Run the following command in the terminal:
 
 ```bash
 python assistant.py
 ```
 
-## How to Use
+5. Follow the prompts and try the supported commands.
 
-1. Launch the application.
-2. Click the **Speak to Assistant** button.
-3. Speak a supported command when the assistant is listening.
-4. View your command and the assistant's response in the conversation area.
-5. Click the microphone button again to give another command.
-6. Click **Exit** or say "Exit" to close the application.
+## Testing
 
-## Example Commands
+The application was tested with greeting, date and time requests, web searches, unrecognized input, and exit commands.
 
-| Voice command | Expected action |
-|---|---|
-| Hello | Responds with a greeting |
-| What is the time? | Announces the current time |
-| What is today's date? | Announces the current date |
-| Search for Python tutorials | Opens a Google search |
-| Exit | Says goodbye and closes the application |
+## Learning Outcomes
 
-## How It Works
+- Working with Python libraries.
+- Processing user commands.
+- Handling errors and unexpected input.
+- Integrating browser functionality.
+- Implementing spoken output on Windows.
 
-1. The user clicks the microphone button.
-2. The microphone captures the spoken command.
-3. SpeechRecognition converts the speech into text.
-4. The program identifies the command and performs the corresponding action.
-5. The assistant displays its response and speaks it using the Windows Speech Synthesizer.
-6. Background threading helps keep the graphical interface responsive during listening.
+## Acknowledgement
 
-## Error Handling
+This project was completed as part of the **Oasis Infobyte Python Programming Internship**.
 
-The application handles situations such as:
+## Screenshots
 
-- No speech detected
-- Unrecognized speech
-- Speech recognition service errors
-- Microphone errors
+### Voice Assistant — Test 1
 
-## Privacy
+![Voice Assistant Test 1](images/voice-assistant-test.png1.png)
 
-The application uses Google Speech Recognition to process voice input, which requires sending audio to an online service. Avoid speaking passwords, financial information, or other sensitive information while using the application.
+### Voice Assistant — Test 2
 
-## Internship Details
-
-- **Organization:** Oasis Infobyte
-- **Track:** Python Programming
-- **Task:** Task 1 – Voice Assistant
-- **Level:** Beginner
-
-## Author
-
-**Safura Mulla**
-
-Oasis Infobyte Internship – Python Programming
+![Voice Assistant Test 2](images/voice-assistant-test.png2.png)

@@ -1,2 +1,18 @@
-# Auto detect text files and perform LF normalization
+# Automatically normalize text files
 * text=auto
+
+# Python source files
+*.py text eol=lf
+
+# Markdown documentation
+*.md text eol=lf
+
+# Requirements and configuration files
+*.txt text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+
+# Windows batch files
+*.bat text eol=crlf
+*.cmd text eol=crlf
